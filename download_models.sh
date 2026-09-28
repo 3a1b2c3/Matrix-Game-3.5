@@ -20,7 +20,7 @@ elif ! command -v hf >/dev/null 2>&1; then
     exit 1
 fi
 
-pip install -U huggingface_hub >/dev/null
+pip install -U "huggingface_hub<2.0" >/dev/null  # transformers requires <2.0
 
 mkdir -p checkpoints
 

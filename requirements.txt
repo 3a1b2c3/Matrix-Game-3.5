@@ -8,7 +8,7 @@ transformers
 sentencepiece
 peft
 modelscope
-huggingface_hub
+huggingface_hub<2.0  # transformers requires <2.0; download_models.sh upgrades this in place
 safetensors
 einops
 omegaconf
