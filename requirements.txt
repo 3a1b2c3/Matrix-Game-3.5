@@ -29,8 +29,9 @@ pycocotools
 
 # Pulled in at `import depth_anything_3.api` time
 moviepy==1.0.3
-pycolmap
 trimesh
+# pycolmap — no aarch64 wheels; only used by the lazy-imported COLMAP export path
+# (depth_anything_3.utils.export.export_to_colmap), not needed for inference.
 
 # attention acceleration (auto-detected; SDPA fallback exists)
 xformers
