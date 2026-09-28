@@ -36,7 +36,7 @@ download_distilled() {
 }
 
 download_shared() {
-    hf download Wan-AI/Wan2.2-TI2V-5B --exclude "assets/*" "examples/*" --local-dir checkpoints/Wan2.2-TI2V-5B
+    hf download Wan-AI/Wan2.2-TI2V-5B --exclude "assets/*" --exclude "examples/*" --local-dir checkpoints/Wan2.2-TI2V-5B
     hf download depth-anything/DA3NESTED-GIANT-LARGE-1.1 --local-dir checkpoints/DA3NESTED-GIANT-LARGE-1.1
 }
 
