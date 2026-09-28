@@ -9,7 +9,16 @@
 set -euo pipefail
 
 MODE="${1:-all}"
+VENV_DIR="${VENV_DIR:-.venv}"
 cd "$(dirname "$0")"
+
+if [ -f "$VENV_DIR/bin/activate" ]; then
+    # shellcheck disable=SC1091
+    source "$VENV_DIR/bin/activate"
+elif ! command -v hf >/dev/null 2>&1; then
+    echo "No venv found at $VENV_DIR and no 'hf' on PATH. Run ./setup_env.sh first." >&2
+    exit 1
+fi
 
 pip install -U huggingface_hub >/dev/null
 
