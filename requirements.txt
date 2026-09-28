@@ -20,7 +20,9 @@ pillow
 OpenEXR
 imageio
 imageio-ffmpeg
-decord
+# decord — no aarch64 wheels (see dmlc/decord#288); only used by training/data-pipeline
+# code (unified_dataset*.py, batch_encode_videos.py, video_io.py), not inference. Install
+# manually if you need those paths on an x86_64 host.
 
 # Third-person subject-ref masks (COCO RLE decode)
 pycocotools
